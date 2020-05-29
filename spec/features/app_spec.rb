@@ -8,15 +8,12 @@ require 'capybara/Rspec'
 #   end
 # end
 
-feature 'fills names' do
-  scenario 'web page returns players name' do
-    visit '/'
-
-    fill_in:player_1, with: 'Rich'
-    # expect(find_field(‘Player_1’).value).to eq ‘John’
-    fill_in :player_2, with: 'Ema'
+feature 'Enter names' do
+  scenario 'submitting names' do
+    visit('/')
+    fill_in :player_1_name, with: 'Rich'
+    fill_in :player_2_name, with: 'Ema'
     click_button 'Submit'
     expect(page).to have_content 'Rich vs. Ema'
-
   end
 end
