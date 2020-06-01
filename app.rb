@@ -3,6 +3,7 @@ require 'sinatra/base'
 class Battle < Sinatra::Base
 
   get '/' do
+    # 'Testing infrastructure working!'
     @name = params[:name]
     erb :index
   end
